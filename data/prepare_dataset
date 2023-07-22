@@ -1,0 +1,27 @@
+import pandas as pd
+import os
+
+# Path to the folder containing the CSV files
+folder_path = r'D:\KT1'
+
+# Get a list of all CSV files in the folder
+csv_files = [file for file in os.listdir(folder_path) if file.endswith('.csv')]
+
+# Create an empty list to store the DataFrames
+dataframes = []
+
+# Read each CSV file and add a new 'filename' column without the .csv extension
+for file in csv_files:
+    file_path = os.path.join(folder_path, file)
+    df = pd.read_csv(file_path)
+    filename_without_extension = os.path.splitext(file)[0]  # Extract filename without extension
+    df['user_id'] = filename_without_extension  # Add a new column with the filename
+    df['question_id'] = df['question_id'].str.replace('q', '')
+    df['user_id'] = df['question_id'].str.replace('u', '')
+    dataframes.append(df)
+
+# Concatenate the DataFrames vertically
+combined_df = pd.concat(dataframes, ignore_index=True)
+
+# Write the combined DataFrame to a new CSV file
+combined_df.to_csv( r'D:combined_with_filename.csv', index=False)
