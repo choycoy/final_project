@@ -1,0 +1,9 @@
+Adaptive learning environments are becoming increasingly popular in personalised education, tailoring the learning experience to individual student’s needs and abilities. This study focuses on the prediction of student performance and providing personalised question recommendations in an adaptive learning environment.
+
+Our approach involves developing predictive models to estimate students' likelihood of answering questions correctly and recommending appropriate next questions to students based on their current performance and progress. For high achievers, challenging questions are suggested to keep them motivated and engaged. On the other hand, struggling learners receive easier questions or remedial content to address their areas of weakness and encourage improvement.
+
+Adaptive Boosting, Gradient Boosting and Extreme Gradient Boosting which are machine learning ensemble techniques are employed to predict student performance. The experimental results demonstrate that the predictions made by ensemble models are more accurate than those of other machine learning techniques for classifying data.
+
+For the next question recommendation, we utilise Collaborative Filtering techniques like Singular Value Decomposition, Non-negative Matrix Factorisation and Co-Clustering. Evaluating the models' accuracy using Root Mean Square Error and Mean Absolute Error revealed that the performance of  Singular Value Decomposition achieved the highest accuracy among the methods tested.
+
+By offering customised and relevant questions to individual students, this research aims to create a more engaging and effective learning environment, ultimately enhancing the overall educational outcomes for students.
