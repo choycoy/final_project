@@ -1,0 +1,24 @@
+1. My project is about prediction of student performance and recommendation of questions in adaptive learning environment. 
+
+2. First, adaptive learning is an educational approach that leverages data and technology to personalise the learning experience for individual learners.It aims to tailor instruction, content, and assessment to the unique needs, abilities, and preferences of each learner, allowing them to learn at their own pace and in a way that maximizes their understanding and retention of the material. 
+
+3. Then, the dataset I used for this project is called EdNet. It is a dataset of all student-system interactions collected over 2 years by an AI tutoring service platform and it is the largest dataset in education available to the public in terms of the total number of students and interactions. It contains various features of students' actions such as which learning material they have consumed and responded, how much time they have spent for solving a given question. I had a total 13619(thirteen thousand six hundred nineteen) questions and 27904657(twenty-seven million nine hundred four thousand six hundred fifty-seven) interactions between students and system. 
+
+4. Among many attributes in the dataset, I mainly used user id, question id, user answer, correct answer and elapsed time attributes for predcition and recommendation. Elapsed time represents the time taken by the student to answer each question in milliseconds. 
+
+5. In this project, the predictive model is developed to predict if the student will answer correctly on the next question by analysing student's past performance such as elapsed time and correctness rate. Correctness rate is a metric used to assess how well a student predicts the accurate answers to questions. This rate is defined as the ratio of correct responses out of the total number of questions attempted by the student.
+
+6.Then, I calculated the average, minimum, and maximum elapsed time for each user. The average elapsed time represents the average time a student takes to answer questions,This feature can provide information about the student's typical response speed. If a student consistently answers questions quickly, it might indicate confidence or familiarity with the material. On the other hand, if the average time is long, it might suggest that the student spends more time on each question, possibly indicating difficulty or uncertainty. 
+
+and Minimum elapsed time is the shortest time the student took to answer a question. This feature can capture outlier behaviors. For example, if the minimum time is significantly shorter than the average, it might indicate that the student rushed through a particular question, possibly resulting in an incorrect answer. Conversely, a very short minimum time might indicate a question that was answered confidently and correctly.
+
+Finally, maximum elapsed time is the longest time the student took to answer a question. This feature can also capture outlier behaviors. If the maximum time is significantly longer than the average, it might suggest that the student struggled with a particular question or needed extra time to think it through.
+
+These features, along with other features like correctness rate, provide a holistic view of the student's behavior and performance. The machine learning model uses this information to learn patterns and relationships between these features and the target variable which is correctness of the next answer
+
+7. Here's how the model might use these features:
+First, the model can learn that students who consistently answer questions quickly, which means average elapsed time is low are more likely to answer the next question correctly if they have a high correctness rate.
+Also, it can learn that students who have a history of rushing through questions, which means minimum elapsed time is low, but also have a low correctness rate are more likely to answer the next question incorrectly.
+In summary, these features are valuable in understanding the dynamics of student engagement and performance in the system.So, in this project, using these features, classification methods which are Decision Tree and K nearest Neighbours algorithm were used to predict the student performance. Especially, I applied ensemble techniques which are bagging, boosting and random forest to improve the accuracy of classifers and evaluated the models' performance using several metrics which are Accuracy, Precision, Recall and F1-Score
+
+
